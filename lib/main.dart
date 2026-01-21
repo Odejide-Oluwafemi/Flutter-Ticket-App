@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/bottom_nav_bar.dart';
+import 'package:ticket_app/app.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,17 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "ETch First App",
       theme: ThemeData(),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.deepPurple,
-          title: Text("ETch App", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Text("Home Screen")
-        ),
-        bottomNavigationBar: BottomNavBar(key: key,),
-      ),
+      home: App(key),
     );
   }
 }
