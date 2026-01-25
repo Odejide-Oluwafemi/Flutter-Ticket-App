@@ -118,6 +118,9 @@ class _HomePageState extends State<HomePage> {
               spacing: 20,
               children: [
                 Hotel(),
+                Hotel(),
+                Hotel(),
+                Hotel(),
               ]
             ),
           ),

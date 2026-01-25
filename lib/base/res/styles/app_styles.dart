@@ -1,35 +1,35 @@
 import 'package:flutter/material.dart';
 
-Color primary = Colors.deepPurple;
-
 class AppStyles {
-  static Color primaryColor = primary;
-  static Color bgColor = const Color(0xFFEEEDF2);
-  static Color textColor = Color(0xFF3B3B3B);
+  // Colors
+  static const Color primaryColor = Colors.deepPurple;
+  static const Color bgColor = Color(0xFFEEEDF2);
+  static const Color textColor = Color(0xFF3B3B3B);
+  static const kakiColor = Color.fromARGB(255, 192, 192, 195);
 
   // Ticket
-  static Color ticketColorBlue = const Color.fromARGB(255, 65, 149, 191);
-  static Color ticketOrange = const Color(0xFFF37B67);
+  static const Color ticketColorBlue = Color.fromARGB(255, 65, 149, 191);
+  static const Color ticketOrange = Color(0xFFF37B67);
 
 
   // Bottom Nav
-  static Color navSelectedColor = ticketColorBlue;
-  static Color navUnselectedColor = const Color(0xFF526400);
+  static const Color navSelectedColor = ticketColorBlue;
+  static const Color navUnselectedColor = Color(0xFF526400);
 
   // TextStyles
-  static TextStyle baseTextStyle = TextStyle(
+  static const TextStyle baseTextStyle = TextStyle(
     fontSize: 16,
     color: textColor,
     fontWeight: FontWeight.w500
   );
 
-  static TextStyle headline1 = TextStyle(
+  static const TextStyle headline1 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
-  static TextStyle headline2 = TextStyle(
+  static const TextStyle headline2 = TextStyle(
     fontSize: 21,
     fontWeight: FontWeight.bold,
     color: textColor,
@@ -40,7 +40,7 @@ class AppStyles {
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle headline4 = TextStyle(
+  static const TextStyle headline4 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.bold,
     color: textColor,
