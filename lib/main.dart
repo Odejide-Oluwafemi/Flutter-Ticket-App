@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/app.dart';
+import 'package:ticket_app/screens/all_tickets.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,7 +12,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "ETch First App",
       theme: ThemeData(),
-      home: App(key),
+      // home: App(key),
+      routes: {
+        "/": (context) => const App(),
+        "all_tickets": (context) => const AllTickets(),
+      },
     );
   }
 }

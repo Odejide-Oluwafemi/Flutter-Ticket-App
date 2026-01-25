@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class BottomNavBar extends StatefulWidget {
   final void Function(int)  onTap;
@@ -22,8 +23,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: _navIndex,
-      selectedItemColor: Colors.deepPurple,
-      unselectedItemColor: const Color(0xFF526400),
+      selectedItemColor: AppStyles.navSelectedColor,
+      unselectedItemColor: AppStyles.navUnselectedColor,
       showSelectedLabels: false,
       items: [
         BottomNavigationBarItem(

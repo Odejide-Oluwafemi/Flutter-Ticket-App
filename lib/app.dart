@@ -1,8 +1,11 @@
 import "package:flutter/material.dart";
 import 'package:ticket_app/base/bottom_nav_bar.dart';
+import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/screens/home_page.dart';
 
 class App extends StatefulWidget {
-  const App(Key? key) : super(key: key);
+  const App({super.key});
+
 
   @override
   State<App> createState() => _AppState();
@@ -10,7 +13,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final List<Widget> screens = [
-    Text("Home Page"),
+    HomePage(),
     Text("Search Page"),
     Text("Tickets Page"),
     Text("Profile Page"),
@@ -27,7 +30,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         title: Text(
           "ETch App",
@@ -38,8 +41,10 @@ class _AppState extends State<App> {
           ),
         ),
         centerTitle: true,
-      ),
-      body: Center(child: screens[_selectedIndex]),
+        
+      ), */
+      backgroundColor: AppStyles.bgColor,
+      body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavBar(onTap: _onBottomNavTapped),
     );
   }
