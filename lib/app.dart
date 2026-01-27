@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:ticket_app/base/bottom_nav_bar.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/screens/home_page.dart';
+import 'package:ticket_app/screens/search_page.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -14,7 +15,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   final List<Widget> screens = [
     HomePage(),
-    Text("Search Page"),
+    SearchPage(),
     Text("Tickets Page"),
     Text("Profile Page"),
   ];
