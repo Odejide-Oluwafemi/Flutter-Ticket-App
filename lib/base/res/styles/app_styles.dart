@@ -9,11 +9,12 @@ class AppStyles {
   static const Color planeColor = const Color(0xFFBFC2DF);
   static const Color findTicketButtonColor =const Color(0xD91130CE);
   static const Color circleColor = Color(0xFF189999);
+  static const Color dotColor = Color(0xFF8ACCF7);
 
   // Ticket
   static const Color ticketColorBlue = Color.fromARGB(255, 65, 149, 191);
   static const Color ticketOrange = Color(0xFFF37B67);
-
+  static const Color ticketWhite = Colors.white;
 
   // Bottom Nav
   static const Color navSelectedColor = ticketColorBlue;
