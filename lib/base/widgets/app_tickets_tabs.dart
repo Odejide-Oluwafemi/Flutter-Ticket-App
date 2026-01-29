@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppTicketsTabs extends StatelessWidget {
-  const AppTicketsTabs({super.key});
+  final String firstTab, secondTab;
+
+  const AppTicketsTabs({super.key, required this.firstTab, required this.secondTab});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
@@ -15,29 +15,36 @@ class AppTicketsTabs extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Container(
-              padding: EdgeInsets.all(8),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.horizontal(left: Radius.circular(50)),
-              ),
-              child: Text("Airline Tickets"),
-            ),
+            child: AppTabs(tabText: firstTab),
           ),
           Expanded(
-            child: Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.horizontal(right: Radius.circular(50)),
-              ),
-              alignment: Alignment.center,
-              child: Text("Hotels"),
-            ),
+            child: AppTabs(tabText: secondTab, tabBorder: true, tabColor: true,),
           ),
         ],
       ),
     );
+  }
+}
+
+class AppTabs extends StatelessWidget {
+  const AppTabs({super.key, this.tabText="", this.tabBorder = false, this.tabColor = false});
+  final String tabText;
+  final bool tabBorder;
+  final bool tabColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    
+    return Container(
+      width: size.width * 0.44,
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: tabColor == false ? Colors.white : Colors.transparent,
+                borderRadius: tabBorder == false ? BorderRadius.horizontal(left: Radius.circular(50)) : BorderRadius.horizontal(right: Radius.circular(50)),
+              ),
+              alignment: Alignment.center,
+              child: Text(tabText),
+            );
   }
 }

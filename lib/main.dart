@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const App(),
         "all_tickets": (context) => const AllTickets(),
-        "all_hotels": (context) => const AllHotels()
+        "all_hotels": (context) => const AllHotels(),
       },
     );
   }

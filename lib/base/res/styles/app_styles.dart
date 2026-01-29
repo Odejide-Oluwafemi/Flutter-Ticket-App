@@ -6,6 +6,9 @@ class AppStyles {
   static const Color bgColor = Color(0xFFEEEDF2);
   static const Color textColor = Color(0xFF3B3B3B);
   static const kakiColor = Color.fromARGB(255, 192, 192, 195);
+  static const Color planeColor = const Color(0xFFBFC2DF);
+  static const Color findTicketButtonColor =const Color(0xD91130CE);
+  static const Color circleColor = Color(0xFF189999);
 
   // Ticket
   static const Color ticketColorBlue = Color.fromARGB(255, 65, 149, 191);

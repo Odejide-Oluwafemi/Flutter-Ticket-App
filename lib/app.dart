@@ -3,6 +3,7 @@ import 'package:ticket_app/base/bottom_nav_bar.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/screens/home_page.dart';
 import 'package:ticket_app/screens/search_page.dart';
+import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -16,7 +17,7 @@ class _AppState extends State<App> {
   final List<Widget> screens = [
     HomePage(),
     SearchPage(),
-    Text("Tickets Page"),
+    TicketScreen(),
     Text("Profile Page"),
   ];
 
