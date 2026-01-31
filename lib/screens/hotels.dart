@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
-import 'package:ticket_app/base/utils/app_media.dart';
+import 'package:ticket_app/base/utils/app_asset_images.dart';
 // import 'package:ticket_app/base/utils/app_media.dart';
 
 class Hotel extends StatelessWidget {
-  final String imagePath;
-  final String name, location;
-  final int price;
+  final Map<String, dynamic> data;
 
-  const Hotel({
-    super.key,
-    required this.imagePath,
-    required this.location,
-    required this.name,
-    required this.price,
-  });
+  // final String imagePath;
+  // final String name, location;
+  // final int price;
+
+  const Hotel(this.data, {super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +33,7 @@ class Hotel extends StatelessWidget {
               color: AppStyles.primaryColor,
               borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
-                image: AssetImage("${AppMedia.baseImage}/$imagePath"),
+                image: AssetImage("${AppAssetImages.baseImage}/${data["image"]}"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -51,17 +47,17 @@ class Hotel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  name,
+                  data["place"],
                   style: AppStyles.headline1.copyWith(
                     color: AppStyles.kakiColor,
                   ),
                 ),
                 Text(
-                  location,
+                  data["destination"],
                   style: AppStyles.headline4.copyWith(color: Colors.white),
                 ),
                 Text(
-                  "\$${price.toString()}/night",
+                  "\$${data["price"].toString()}/night",
                   style: AppStyles.headline2.copyWith(
                     color: AppStyles.kakiColor,
                   ),

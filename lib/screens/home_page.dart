@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
           child: AppDoubleText(
             leftText: "Hotels",
             rightText: "View All",
-            func: () => Navigator.pushNamed(context, AppRoutes.hotels),
+            func: () => Navigator.pushNamed(context, AppRoutes.allHotels),
           ),
         ),
 
@@ -116,12 +116,7 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               spacing: 20,
-              children: hotelList.take(5).map((hotelData) => Hotel(
-                name: hotelData["place"],
-                imagePath: hotelData["image"],
-                location: hotelData["destination"],
-                price: hotelData["price"],
-              )).toList()
+              children: hotelList.take(3).map((hotelData) => Hotel(hotelData)).toList(),
             ),
           ),
         ),

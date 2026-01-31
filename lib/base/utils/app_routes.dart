@@ -1,5 +1,7 @@
 class AppRoutes {
   static String home = "/";
-  static String allTickets = "all_tickets";
-  static String hotels = "all_hotels";
+  static const String allTickets = "/all_tickets";
+  static const String allHotels = "/all_hotels";
+  static const String ticketScreen = "/ticket_screen";
+  static const String hotelDetail = "/hotel_detail";
 }
