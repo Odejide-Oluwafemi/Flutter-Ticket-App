@@ -8,7 +8,6 @@ import "package:ticket_app/base/widgets/app_double_text.dart";
 import "package:ticket_app/base/widgets/ticket_view.dart";
 import "package:ticket_app/screens/hotels.dart";
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -21,6 +20,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var displayticketList = ticketList;
+    displayticketList.shuffle();
+    displayticketList = displayticketList.take(3).toList();
+
     return ListView(
       children: [
         const SizedBox(height: 40),
@@ -95,7 +98,13 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               spacing: 20,
-              children: ticketList.take(2).map((ticketData) => TicketView(data: ticketData)).toList(),
+              children: displayticketList
+                  .map((ticketData) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.ticketScreen, arguments: {"ticketIndex": ticketList.indexOf(ticketData)});
+                    },
+                    child: TicketView(data: ticketData)))
+                  .toList(),
             ),
           ),
         ),
@@ -116,7 +125,14 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               spacing: 20,
-              children: hotelList.take(3).map((hotelData) => Hotel(hotelData)).toList(),
+              children: hotelList
+                  .take(3)
+                  .map((hotelData) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(AppRoutes.hotelDetail, arguments: {"data": hotelData});
+                    },
+                    child: Hotel(hotelData)))
+                  .toList(),
             ),
           ),
         ),
