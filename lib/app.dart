@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:ticket_app/base/bottom_nav_bar.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/screens/home_page.dart';
+import 'package:ticket_app/screens/profile_page.dart';
 import 'package:ticket_app/screens/search_page.dart';
 import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
@@ -18,7 +19,7 @@ class _AppState extends State<App> {
     HomePage(),
     SearchPage(),
     TicketScreen(),
-    Text("Profile Page"),
+    ProfilePage(),
   ];
 
   int _selectedIndex = 0;
